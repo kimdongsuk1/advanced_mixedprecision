@@ -2,7 +2,7 @@
 
 # tbd
 
-Efficient Mixed-Precision Training with Master Weights:
+# Efficient Mixed-Precision Training with Master Weights:
 
 1. Optimized Master Weight Usage:
 
@@ -17,4 +17,5 @@ Efficient Mixed-Precision Training with Master Weights:
 
 - An improved stochastic rounding method.
 - May eliminate the need for a master weight.
-- Both methods are implemented using CUDA kernels.
+
+## Both methods are implemented using CUDA kernels.
