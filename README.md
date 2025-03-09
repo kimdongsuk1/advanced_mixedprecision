@@ -4,13 +4,14 @@
 
 Efficient Mixed-Precision Training with Master Weights:
 
-Optimized Master Weight Usage:
+1. Optimized Master Weight Usage:
 
-1. The last 8-bit mantissa of the master weight is split and shared between the forward and backward passes.
+- The last 8-bit mantissa of the master weight is split and shared between the forward and backward passes.
 - Before updating the master weights, the split parts are merged.
-This approach applies to two scenarios:
-- bfloat training: Uses BF16 for computation and FP32 for master weights.
-- e2m5 training: Uses FP8 (E2M5) for computation and FP16 for master weights.
+
+- This approach applies to two scenarios:
+  bfloat training: Uses BF16 for computation and FP32 for master weights.
+  e2m5 training: Uses FP8 (E2M5) for computation and FP16 for master weights.
 
 2. Biased Stochastic Rounding:
 
