@@ -2,8 +2,18 @@
 
 # tbd
 
-1. mixed precision efficient usage of master weight: spliting last 8bit mantissa of master weight and copied for forward and bacward. merge before updating master weights. two scenarios are possible : bfloat training(bf16 & fp32) , e2m5(fp8 & fp16).
+Efficient Mixed-Precision Training with Master Weights:
 
-2. biased stochastic rounding : improved stochastic rounding. a master weight might not need.
+Optimized Master Weight Usage:
 
-The above two methods are implemented using cuda kernel.
+1. The last 8-bit mantissa of the master weight is split and shared between the forward and backward passes.
+- Before updating the master weights, the split parts are merged.
+This approach applies to two scenarios:
+- bfloat training: Uses BF16 for computation and FP32 for master weights.
+- e2m5 training: Uses FP8 (E2M5) for computation and FP16 for master weights.
+
+2. Biased Stochastic Rounding:
+
+- An improved stochastic rounding method.
+- May eliminate the need for a master weight.
+- Both methods are implemented using CUDA kernels.
