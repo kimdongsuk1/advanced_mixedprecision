@@ -10,8 +10,8 @@ Efficient Mixed-Precision Training with Master Weights:
 - Before updating the master weights, the split parts are merged.
 
 - This approach applies to two scenarios:
-  bfloat training: Uses BF16 for computation and FP32 for master weights.
-  e2m5 training: Uses FP8 (E2M5) for computation and FP16 for master weights.
+  * bfloat training: Uses BF16 for computation and FP32 for master weights.
+  * e2m5 training: Uses FP8 (E2M5) for computation and FP16 for master weights.
 
 2. Biased Stochastic Rounding:
 
